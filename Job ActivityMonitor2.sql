@@ -25,5 +25,5 @@ SELECT myJob.name as JobName , myJobActivityMonitor.last_run_outcome
 FROM [msdb].[dbo].[sysjobservers] as myJobActivityMonitor
 INNER JOIN [msdb].[dbo].[sysjobs] as myJob on myJobActivityMonitor.job_id=myJob.job_id
 WHERE myJob.[enabled]=1
-	AND myJobActivityMonitor.last_run_outcome NOT IN (1,5)
+--	AND myJobActivityMonitor.last_run_outcome NOT IN (1,5)
 ORDER BY myJobActivityMonitor.[last_run_outcome],5 Desc
